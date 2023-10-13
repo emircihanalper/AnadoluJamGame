@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
             animator.SetTrigger("ChangeStone");
         }
 
-        if (Input.GetKeyDown("e") && Time.time-lastTimeShoot>coolDown)
+        if (Input.GetMouseButtonDown(0) && Time.time-lastTimeShoot>coolDown)
         {
             ObjectShoot();
         }

@@ -289,6 +289,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yaka: {fileID: 490465072}
+  shootObject: {fileID: 7225145575115763639, guid: 45df095de7aeb1a498df09b9146409fc, type: 3}
+  pivotPoint: {fileID: 1007939057538951838}
 --- !u!212 &606553278
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -371,7 +373,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1007939057538951838}
   m_Layer: 0
-  m_Name: pivotpoint
+  m_Name: PivotPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -385,7 +387,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4973921141671069398}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.278, z: 0}
+  m_LocalPosition: {x: 0.277, y: -0.278, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
