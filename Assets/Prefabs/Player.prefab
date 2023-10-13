@@ -47,7 +47,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &490465073
 Transform:
   m_ObjectHideFlags: 0
@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 606553279}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -289,7 +289,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yaka: {fileID: 490465072}
-  shootObject: {fileID: 7225145575115763639, guid: 45df095de7aeb1a498df09b9146409fc, type: 3}
+  shootObjects:
+  - {fileID: 7225145575115763639, guid: 45df095de7aeb1a498df09b9146409fc, type: 3}
+  - {fileID: 7225145575115763639, guid: 883982f9450123f458606c5adf7c8ce0, type: 3}
+  - {fileID: 7225145575115763639, guid: 00c4973cccb8b2d4e86b0e2d5ebd1e2f, type: 3}
   pivotPoint: {fileID: 1007939057538951838}
 --- !u!212 &606553278
 SpriteRenderer:

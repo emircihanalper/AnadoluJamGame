@@ -70,14 +70,9 @@ public class PlayerController : MonoBehaviour
 
     private void ObjectShoot()
     {
-        
-            GameObject thrownobject = Instantiate(shootObjects[element-1], pivotPoint.position, transform.rotation);
-            thrownobject.GetComponent<Rigidbody2D>().AddForce(transform.right * transform.localScale.x * 750);
-            lastTimeShoot = Time.time;
-        
-        
-
-
+        GameObject thrownobject = Instantiate(shootObjects[element-1], pivotPoint.position, transform.rotation);
+        thrownobject.GetComponent<Rigidbody2D>().AddForce(transform.right * transform.localScale.x * 750);
+        lastTimeShoot = Time.time;
     }
 
     private void FixedUpdate()
@@ -102,6 +97,9 @@ public class PlayerController : MonoBehaviour
             isJumped = false;
             jumpCount = 0;
 
+        } else if(collision.gameObject.CompareTag("Onfire") && element!=1)
+        {
+            Debug.Log("Die");
         }
     }
 
