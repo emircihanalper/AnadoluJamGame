@@ -16,8 +16,9 @@ public class PlayerController : MonoBehaviour
     float coolDown = 0.5f;    
     Animator animator;
     [SerializeField] GameObject yaka;
-    [SerializeField] GameObject shootObject;
+    [SerializeField] GameObject[] shootObjects;
     [SerializeField] Transform pivotPoint;
+    int element = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,14 +49,17 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown("1"))
         {
             animator.SetTrigger("ChangeFire");
+            element = 1;
         }
         if (Input.GetKeyDown("2"))
         {
             animator.SetTrigger("ChangeWater");
+            element = 2;
         }
         if (Input.GetKeyDown("3"))
         {
             animator.SetTrigger("ChangeStone");
+            element = 3;
         }
 
         if (Input.GetMouseButtonDown(0) && Time.time-lastTimeShoot>coolDown)
@@ -66,9 +70,14 @@ public class PlayerController : MonoBehaviour
 
     private void ObjectShoot()
     {
-        GameObject thrownobject = Instantiate(shootObject, pivotPoint.position, transform.rotation);
-        thrownobject.GetComponent<Rigidbody2D>().AddForce(transform.right * transform.localScale.x * 750);
-        lastTimeShoot = Time.time;
+        
+            GameObject thrownobject = Instantiate(shootObjects[element-1], pivotPoint.position, transform.rotation);
+            thrownobject.GetComponent<Rigidbody2D>().AddForce(transform.right * transform.localScale.x * 750);
+            lastTimeShoot = Time.time;
+        
+        
+
+
     }
 
     private void FixedUpdate()

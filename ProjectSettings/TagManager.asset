@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - fire
+  - Onfire
+  - Onlava
+  - water
+  - stone
   layers:
   - Default
   - TransparentFX
