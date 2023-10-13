@@ -9,6 +9,9 @@ TagManager:
   - Fire
   - Water
   - Stone
+  - Rocks
+  - Level
+  - Empty
   layers:
   - Default
   - TransparentFX

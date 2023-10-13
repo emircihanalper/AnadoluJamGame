@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -100,6 +102,14 @@ public class PlayerController : MonoBehaviour
         } else if(collision.gameObject.CompareTag("Onfire") && element!=1)
         {
             Debug.Log("Die");
+        }
+        else if(collision.gameObject.CompareTag("Level"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        else if (collision.gameObject.CompareTag("Empty"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
