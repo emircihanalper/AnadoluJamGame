@@ -424,6 +424,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &490465072 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 490465072, guid: c375f4ffdd7f79c47b81cefb7d7e6371, type: 3}
+  m_PrefabInstance: {fileID: 4706860884022028123}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &606553276 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4706860883420586983, guid: c375f4ffdd7f79c47b81cefb7d7e6371, type: 3}
@@ -859,7 +864,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 490465072, guid: c375f4ffdd7f79c47b81cefb7d7e6371, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 490465073, guid: c375f4ffdd7f79c47b81cefb7d7e6371, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 490465073, guid: c375f4ffdd7f79c47b81cefb7d7e6371, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 490465073, guid: c375f4ffdd7f79c47b81cefb7d7e6371, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 490465074, guid: c375f4ffdd7f79c47b81cefb7d7e6371, type: 3}
       propertyPath: m_Sprite
@@ -901,6 +918,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4706860883420586982, guid: c375f4ffdd7f79c47b81cefb7d7e6371, type: 3}
+      propertyPath: yaka
+      value: 
+      objectReference: {fileID: 490465072}
     - target: {fileID: 4706860883420586983, guid: c375f4ffdd7f79c47b81cefb7d7e6371, type: 3}
       propertyPath: m_RootOrder
       value: 1

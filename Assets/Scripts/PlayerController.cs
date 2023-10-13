@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     bool isGrounded=true;
     int jumpCount = 0;
     Animator animator;
+    [SerializeField] GameObject yaka;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,12 +35,23 @@ public class PlayerController : MonoBehaviour
         }
 
         animator.SetBool("isRunning", Mathf.Abs(input) > 0);
-        
+        yaka.SetActive(Mathf.Abs(input) > 0);
         if (Input.GetKeyDown(KeyCode.Space))
         {
             isJumped = true;
         }
-        
+        if (Input.GetKeyDown("1"))
+        {
+            animator.SetTrigger("ChangeFire");
+        }
+        if (Input.GetKeyDown("2"))
+        {
+            animator.SetTrigger("ChangeWater");
+        }
+        if (Input.GetKeyDown("3"))
+        {
+            animator.SetTrigger("ChangeStone");
+        }
     }
 
     private void FixedUpdate()
