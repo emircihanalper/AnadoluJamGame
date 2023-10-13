@@ -12,13 +12,18 @@ public class PlayerController : MonoBehaviour
     bool isJumped;
     bool isGrounded=true;
     int jumpCount = 0;
+    float lastTimeShoot;
+    float coolDown = 0.5f;    
     Animator animator;
     [SerializeField] GameObject yaka;
+    [SerializeField] GameObject shootObject;
+    [SerializeField] Transform pivotPoint;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        lastTimeShoot = Time.time;
     }
 
     // Update is called once per frame
@@ -52,6 +57,18 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetTrigger("ChangeStone");
         }
+
+        if (Input.GetKeyDown("e") && Time.time-lastTimeShoot>coolDown)
+        {
+            ObjectShoot();
+        }
+    }
+
+    private void ObjectShoot()
+    {
+        GameObject thrownobject = Instantiate(shootObject, pivotPoint.position, transform.rotation);
+        thrownobject.GetComponent<Rigidbody2D>().AddForce(transform.right * transform.localScale.x * 750);
+        lastTimeShoot = Time.time;
     }
 
     private void FixedUpdate()
