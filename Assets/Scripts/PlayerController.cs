@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     float input;
     float speed=10f;
     Vector2 targetVelocity;
-    float jumpForce = 10f;
+    float jumpForce = 15f;
     bool isJumped;
     bool isGrounded=true;
     int jumpCount = 0;
