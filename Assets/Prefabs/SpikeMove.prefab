@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 6832076633031165790}
   m_Layer: 0
   m_Name: SpikeTop
-  m_TagString: Metal
+  m_TagString: Die
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

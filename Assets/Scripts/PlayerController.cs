@@ -98,7 +98,8 @@ public class PlayerController : MonoBehaviour
             if(element==1)
             {
                 animator.SetBool("isFireJumping", true);
-            } else if (element == 2)
+            } 
+            else if (element == 2)
             {
                 animator.SetBool("isWaterJumping", true);
             }
@@ -117,20 +118,11 @@ public class PlayerController : MonoBehaviour
             isGrounded = true;
             isJumped = false;
             jumpCount = 0;
-            if (element == 1)
-            {
-                animator.SetBool("isFireJumping", false);
-            }
-            else if (element == 2)
-            {
-                animator.SetBool("isWaterJumping", false);
-            }
-            else if (element == 3)
-            {
-                animator.SetBool("isStoneJumping", false);
-            }
-
-        } else if(collision.gameObject.CompareTag("Onfire") && element!=1)
+            animator.SetBool("isFireJumping", false);
+            animator.SetBool("isWaterJumping", false);
+            animator.SetBool("isStoneJumping", false);           
+        }
+        else if(collision.gameObject.CompareTag("Onfire") && element!=1)
         {
             animator.SetTrigger("Die");
             face.SetActive(false);
