@@ -2701,7 +2701,7 @@ Tilemap:
       - {fileID: 21300000, guid: 6d1d3b4ce47020b45992704d4d453edd, type: 3}
       - {fileID: 21300000, guid: 58614214f47543f4ab2ba2b8c0651adf, type: 3}
       - {fileID: 21300000, guid: 4df44213170dcdd45b852b294034ee6a, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 65, y: -3, z: 0}
@@ -2723,7 +2723,7 @@ Tilemap:
       - {fileID: 21300000, guid: 6d1d3b4ce47020b45992704d4d453edd, type: 3}
       - {fileID: 21300000, guid: 58614214f47543f4ab2ba2b8c0651adf, type: 3}
       - {fileID: 21300000, guid: 4df44213170dcdd45b852b294034ee6a, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 58, y: -2, z: 0}
@@ -3020,7 +3020,7 @@ Tilemap:
       - {fileID: 21300000, guid: 6d1d3b4ce47020b45992704d4d453edd, type: 3}
       - {fileID: 21300000, guid: 58614214f47543f4ab2ba2b8c0651adf, type: 3}
       - {fileID: 21300000, guid: 4df44213170dcdd45b852b294034ee6a, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 58, y: 1, z: 0}
@@ -3370,11 +3370,6 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1404186436720282350, guid: 59c29551d7cda764a9162a6554494ddf, type: 3}
   m_PrefabInstance: {fileID: 1556931505}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &552639946 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6824873591858773922, guid: 7389dab8ec82b4546b04ca053a269221, type: 3}
-  m_PrefabInstance: {fileID: 6824873592262821508}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &560310754
 PrefabInstance:
@@ -24612,18 +24607,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6824873591858773923, guid: 7389dab8ec82b4546b04ca053a269221, type: 3}
   m_PrefabInstance: {fileID: 6824873592262821508}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1751824680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 552639946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ffc08d44d7251e499197d51c65d1e23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1797613058
 GameObject:
   m_ObjectHideFlags: 0
@@ -26176,10 +26159,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6824873591858773923, guid: 7389dab8ec82b4546b04ca053a269221, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6824873591858773934, guid: 7389dab8ec82b4546b04ca053a269221, type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
