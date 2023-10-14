@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     int element = 1;
     AudioManager audioManager;
     string[] sfxNames= {"Fire" ,"Water","Stone"};
+    [SerializeField] GameObject face;
     // Start is called before the first frame update
     void Start()
     {
@@ -130,6 +131,7 @@ public class PlayerController : MonoBehaviour
         } else if(collision.gameObject.CompareTag("Onfire") && element!=1)
         {
             animator.SetTrigger("Die");
+            face.SetActive(false);
             StartCoroutine(LoadSameScene());
         }
         else if(collision.gameObject.CompareTag("Level"))
@@ -139,6 +141,7 @@ public class PlayerController : MonoBehaviour
         else if (collision.gameObject.CompareTag("Die"))
         {
             animator.SetTrigger("Die");
+            face.SetActive(false);
             StartCoroutine(LoadSameScene());
         }
     }
