@@ -1750,6 +1750,10 @@ MonoBehaviour:
   red: {r: 0.6981132, g: 0, b: 0.060075995, a: 1}
   blue: {r: 0.14706299, g: 0.4810164, b: 0.764151, a: 1}
   finish: {fileID: 5344860}
+  shields:
+  - {fileID: 373148329}
+  - {fileID: 1980992129}
+  - {fileID: 458598090}
 --- !u!1 &1290912674
 GameObject:
   m_ObjectHideFlags: 0
