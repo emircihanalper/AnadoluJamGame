@@ -12,15 +12,21 @@ public class EnemyShoot : MonoBehaviour
     float jumpForce = 8f;
     int count = 3;
     AudioManager audioManager;
+    bool isStarted;
     private void Start()
     {
         audioManager = FindObjectOfType<AudioManager>();
     }
 
+    public void StartBoss()
+    {
+        isStarted = true;
+    }
+
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer > 4)
+        if (timer > 4 && isStarted)
         {
             timer = 0;
             audioManager.Play("Boss");
