@@ -91,6 +91,18 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             jumpCount++;
             isJumped = false;
+
+            if(element==1)
+            {
+                animator.SetBool("isFireJumping", true);
+            } else if (element == 2)
+            {
+                animator.SetBool("isWaterJumping", true);
+            }
+            else if (element == 3)
+            {
+                animator.SetBool("isStoneJumping", true);
+            }
         }
 
     }
@@ -102,19 +114,39 @@ public class PlayerController : MonoBehaviour
             isGrounded = true;
             isJumped = false;
             jumpCount = 0;
+            if (element == 1)
+            {
+                animator.SetBool("isFireJumping", false);
+            }
+            else if (element == 2)
+            {
+                animator.SetBool("isWaterJumping", false);
+            }
+            else if (element == 3)
+            {
+                animator.SetBool("isStoneJumping", false);
+            }
 
         } else if(collision.gameObject.CompareTag("Onfire") && element!=1)
         {
-            Debug.Log("Die");
+            animator.SetTrigger("Die");
+            StartCoroutine(LoadSameScene());
         }
         else if(collision.gameObject.CompareTag("Level"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-        else if (collision.gameObject.CompareTag("Empty") || collision.gameObject.CompareTag("Metal"))
+        else if (collision.gameObject.CompareTag("Die"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            animator.SetTrigger("Die");
+            StartCoroutine(LoadSameScene());
         }
+    }
+
+    IEnumerator LoadSameScene()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 }
