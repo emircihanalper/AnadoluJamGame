@@ -13,6 +13,7 @@ public class ShieldScript : MonoBehaviour
     [SerializeField] Color red;
     [SerializeField] Color blue;
     [SerializeField] GameObject finish;
+    bool canDamage;
     // Start is called before the first frame update
     void Start()
     {
@@ -67,7 +68,7 @@ public class ShieldScript : MonoBehaviour
                 Destroy(collision.gameObject);
                 finish.SetActive(true);
                 StartCoroutine(goCredits());
-                Destroy(gameObject);
+                //Destroy(gameObject);
             }
         }
     }
@@ -75,6 +76,7 @@ public class ShieldScript : MonoBehaviour
     IEnumerator goCredits()
     {
         yield return new WaitForSeconds(3f);
+        finish.SetActive(false);
         SceneManager.LoadScene(2);
     }
 }
