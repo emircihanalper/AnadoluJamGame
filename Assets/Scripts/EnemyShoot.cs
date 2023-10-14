@@ -20,7 +20,7 @@ public class EnemyShoot : MonoBehaviour
 
     public void StartBoss()
     {
-        isStarted = true;
+        StartCoroutine(bosswait());
     }
 
     void Update()
@@ -49,5 +49,11 @@ public class EnemyShoot : MonoBehaviour
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         Instantiate(Bullet, Pivotpoint.position, Quaternion.identity);
     }
+
+    IEnumerator bosswait()
+    {
+        yield return new WaitForSeconds(2.5f);
+        isStarted = true;
+    }    
 
 }
