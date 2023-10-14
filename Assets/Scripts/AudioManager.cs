@@ -60,4 +60,17 @@ public partial class AudioManager : MonoBehaviour
 
         s.source.Stop();
     }
+
+    public void SetBGMVolume(float vol)
+    {
+        sounds[0].source.volume = vol;
+    }
+
+    public void SetSFXVolume(float vol)
+    {
+        for (int i = 1; i < sounds.Length; i++)
+        {
+            sounds[i].source.volume = vol;
+        }
+    }
 }
