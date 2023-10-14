@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class PlayerController : MonoBehaviour
 {
@@ -31,9 +32,10 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         lastTimeShoot = Time.time;
         audioManager = FindObjectOfType<AudioManager>();
+        
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         input = Input.GetAxisRaw("Horizontal");
@@ -144,6 +146,7 @@ public class PlayerController : MonoBehaviour
             face.SetActive(false);
             StartCoroutine(LoadSameScene());
         }
+        
     }
 
     IEnumerator LoadSameScene()
