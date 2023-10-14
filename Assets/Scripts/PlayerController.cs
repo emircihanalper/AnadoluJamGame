@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class PlayerController : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
     int element = 1;
     AudioManager audioManager;
     string[] sfxNames= {"Fire" ,"Water","Stone"};
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -30,9 +32,10 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         lastTimeShoot = Time.time;
         audioManager = FindObjectOfType<AudioManager>();
+        
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         input = Input.GetAxisRaw("Horizontal");
@@ -141,6 +144,7 @@ public class PlayerController : MonoBehaviour
             animator.SetTrigger("Die");
             StartCoroutine(LoadSameScene());
         }
+        
     }
 
     IEnumerator LoadSameScene()
