@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-        else if (collision.gameObject.CompareTag("Empty"))
+        else if (collision.gameObject.CompareTag("Empty") || collision.gameObject.CompareTag("Metal"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }

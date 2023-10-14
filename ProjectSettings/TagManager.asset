@@ -12,6 +12,7 @@ TagManager:
   - Rocks
   - Level
   - Empty
+  - Metal
   layers:
   - Default
   - TransparentFX
