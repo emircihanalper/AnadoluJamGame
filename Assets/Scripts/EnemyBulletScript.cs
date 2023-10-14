@@ -6,18 +6,24 @@ public class EnemyBulletScript : MonoBehaviour
 {
     private GameObject Hero;
     private Rigidbody2D rb;
+    Vector3 direction;
     void Start()
     {
         rb= GetComponent<Rigidbody2D>();
         Hero = GameObject.FindGameObjectWithTag("Player");
 
-        Vector3 direction= Hero.transform.position - transform.position;
-        rb.velocity = new Vector2(direction.x,direction.y).normalized * 5;
+        direction= Hero.transform.position - transform.position;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private void FixedUpdate()
+    {
+        rb.velocity = new Vector2(direction.x, direction.y).normalized * 250*Time.fixedDeltaTime;
     }
 }

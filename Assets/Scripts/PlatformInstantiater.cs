@@ -16,6 +16,8 @@ public class PlatformInstantiater : MonoBehaviour
         if(collision.gameObject.CompareTag("Stone"))
         {
             Instantiate(platform, transform.position, Quaternion.identity);
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
         }
     }
 }

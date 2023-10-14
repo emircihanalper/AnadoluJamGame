@@ -5,6 +5,8 @@ using UnityEngine;
 public class ShieldScript : MonoBehaviour
 {
     int hit = 3;
+    int element = 1;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +20,7 @@ public class ShieldScript : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
-        if (collision.gameObject.CompareTag("Stone"))
+        if (collision.gameObject.CompareTag("Stone") && element==1)
         {
             hit--;
             if (hit <= 0)
@@ -30,7 +32,7 @@ public class ShieldScript : MonoBehaviour
             }
         }
 
-        if (collision.gameObject.CompareTag("Fire"))
+        if (collision.gameObject.CompareTag("Fire") && element==2)
         {
             hit--;
             if (hit <= 0)
@@ -42,7 +44,7 @@ public class ShieldScript : MonoBehaviour
             }
         }
 
-        if (collision.gameObject.CompareTag("Water"))
+        if (collision.gameObject.CompareTag("Water") && element==3)
         {
             hit--;
             if (hit <= 0)
