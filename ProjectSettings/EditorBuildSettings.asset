@@ -25,5 +25,9 @@ EditorBuildSettings:
     guid: 5d48ccb136beda748b6f737f83d78b77
   - enabled: 1
     path: Assets/Scenes/Level_04.unity
+<<<<<<< Updated upstream
     guid: a116bb2270284a74f8b2b8778ebc5f8d
+=======
+    guid: 682311575863352419fba0b0e6b41724
+>>>>>>> Stashed changes
   m_configObjects: {}

@@ -5,6 +5,8 @@ using UnityEngine;
 public class StoneTrapScript : MonoBehaviour
 {
     int hit = 3;
+    [SerializeField] SpriteRenderer[] renderers;
+    [SerializeField] Sprite[] cracks;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,13 +19,20 @@ public class StoneTrapScript : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
-
+        
         if (collision.gameObject.CompareTag("Stone"))
         {
             hit--;
             if (hit <= 0)
             {
                 Destroy(gameObject);
+            }
+            else
+            {
+                foreach (SpriteRenderer r in renderers)
+                {
+                    r.sprite = cracks[hit - 1];
+                }
             }
 
         }
