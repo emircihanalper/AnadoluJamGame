@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     AudioManager audioManager;
     string[] sfxNames= {"Fire" ,"Water","Stone"};
     [SerializeField] GameObject face;
+
     // Start is called before the first frame update
     void Start()
     {
