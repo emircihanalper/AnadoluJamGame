@@ -13,6 +13,7 @@ public class EnemyShoot : MonoBehaviour
     int count = 3;
     AudioManager audioManager;
     bool isStarted;
+    
     private void Start()
     {
         audioManager = FindObjectOfType<AudioManager>();
@@ -46,13 +47,13 @@ public class EnemyShoot : MonoBehaviour
     }
     public void Shoot()
     {
-        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        //rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         Instantiate(Bullet, Pivotpoint.position, Quaternion.identity);
     }
 
     IEnumerator bosswait()
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(5f);
         isStarted = true;
     }    
 

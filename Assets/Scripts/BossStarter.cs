@@ -21,7 +21,7 @@ public class BossStarter : MonoBehaviour
 
     IEnumerator wait()
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(5f);
         Destroy(uiObject);
         Destroy(gameObject);
     }
