@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class FireTrapScript : MonoBehaviour
 {
-    int hit = 3;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    int hit = 3;    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Water") || collision.gameObject.CompareTag("Fire") || collision.gameObject.CompareTag("Stone") || collision.gameObject.CompareTag("Metal"))
+        if(collision.gameObject.CompareTag("Water") || collision.gameObject.CompareTag("Fire") || collision.gameObject.CompareTag("Stone"))
         {
             Destroy(collision.gameObject);
         }
