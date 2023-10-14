@@ -82,6 +82,17 @@ public class PlayerController : MonoBehaviour
         GameObject thrownobject = Instantiate(shootObjects[element-1], pivotPoint.position, transform.rotation);
         thrownobject.GetComponent<Rigidbody2D>().AddForce(transform.right * transform.localScale.x * 750);
         audioManager.Play(sfxNames[element - 1]);
+        if(element==1)
+        {
+            animator.SetTrigger("Fireball");
+        } else if (element == 2)
+        {
+            animator.SetTrigger("Waterball");
+        }
+        else if (element == 3)
+        {
+            animator.SetTrigger("Stoneball");
+        }
         lastTimeShoot = Time.time;
     }
 
