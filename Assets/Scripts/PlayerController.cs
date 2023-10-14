@@ -140,7 +140,7 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-        else if (collision.gameObject.CompareTag("Die"))
+        else if (collision.gameObject.CompareTag("Die") || collision.gameObject.CompareTag("Empty"))
         {
             animator.SetTrigger("Die");
             face.SetActive(false);

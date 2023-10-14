@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 480202035466087066}
   m_Layer: 0
-  m_Name: Enemy
-  m_TagString: Untagged
+  m_Name: Kazik
+  m_TagString: Die
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 480202036839079310}
   m_Layer: 0
   m_Name: Drill
-  m_TagString: Metal
+  m_TagString: Die
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

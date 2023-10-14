@@ -593,6 +593,7 @@ MonoBehaviour:
   - {fileID: 7225145575115763639, guid: 883982f9450123f458606c5adf7c8ce0, type: 3}
   - {fileID: 7225145575115763639, guid: 00c4973cccb8b2d4e86b0e2d5ebd1e2f, type: 3}
   pivotPoint: {fileID: 1007939057538951838}
+  face: {fileID: 3786189384151195821}
 --- !u!212 &606553278
 SpriteRenderer:
   m_ObjectHideFlags: 0
