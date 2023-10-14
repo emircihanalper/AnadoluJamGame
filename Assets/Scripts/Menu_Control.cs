@@ -9,7 +9,10 @@ public class Menu_Control : MonoBehaviour
     {
         SceneManager.LoadScene(3);
     }
-
+    public void TestBoss()
+    {
+        SceneManager.LoadScene(7);
+    }
     public void Quit_button()
     {
         Application.Quit();

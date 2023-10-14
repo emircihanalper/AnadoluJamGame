@@ -9,21 +9,23 @@ public class EnemyShoot : MonoBehaviour
     public Transform Pivotpoint;
     private float timer;
     [SerializeField] Rigidbody2D rb;
-    float jumpForce = 12f;
+    float jumpForce = 8f;
     int count = 3;
+    AudioManager audioManager;
     private void Start()
     {
-        
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     void Update()
     {
         timer += Time.deltaTime;
-
         if (timer > 4)
         {
             timer = 0;
-            StartCoroutine(ShootWait(0.5f));
+            audioManager.Play("Boss");
+            StartCoroutine(ShootWait(0.25f));
+            count = 3;
         }
     }
     IEnumerator ShootWait(float sec)
@@ -33,7 +35,7 @@ public class EnemyShoot : MonoBehaviour
         count--;
         if(count>0)
         {
-            StartCoroutine(ShootWait(0.5f));
+            StartCoroutine(ShootWait(sec));
         }
     }
     public void Shoot()

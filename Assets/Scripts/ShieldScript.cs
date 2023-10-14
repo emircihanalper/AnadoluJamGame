@@ -26,9 +26,10 @@ public class ShieldScript : MonoBehaviour
             if (hit <= 0)
             {
                 //Destroy(gameObject);
-                transform.gameObject.tag = "Metal";
+                //transform.gameObject.tag = "Metal";
                 GetComponent<SpriteRenderer>().color = Color.red;
                 hit = 3;
+                element = 2;
             }
         }
 
@@ -38,9 +39,10 @@ public class ShieldScript : MonoBehaviour
             if (hit <= 0)
             {
                 //Destroy(gameObject);
-                transform.gameObject.tag = "Onfire";
+                //transform.gameObject.tag = "Onfire";
                 GetComponent<SpriteRenderer>().color = Color.blue;
                 hit = 3;
+                element = 3;
             }
         }
 
@@ -49,6 +51,7 @@ public class ShieldScript : MonoBehaviour
             hit--;
             if (hit <= 0)
             {
+                Destroy(collision.gameObject);
                 Destroy(gameObject);
             }
         }

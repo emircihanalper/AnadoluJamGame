@@ -21,12 +21,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject[] shootObjects;
     [SerializeField] Transform pivotPoint;
     int element = 1;
+    AudioManager audioManager;
+    string[] sfxNames= {"Fire" ,"Water","Stone"};
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         lastTimeShoot = Time.time;
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     // Update is called once per frame
@@ -74,6 +77,7 @@ public class PlayerController : MonoBehaviour
     {
         GameObject thrownobject = Instantiate(shootObjects[element-1], pivotPoint.position, transform.rotation);
         thrownobject.GetComponent<Rigidbody2D>().AddForce(transform.right * transform.localScale.x * 750);
+        audioManager.Play(sfxNames[element - 1]);
         lastTimeShoot = Time.time;
     }
 

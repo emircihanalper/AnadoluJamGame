@@ -13,6 +13,7 @@ TagManager:
   - Level
   - Empty
   - Metal
+  - Boss
   layers:
   - Default
   - TransparentFX

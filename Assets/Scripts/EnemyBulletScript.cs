@@ -24,6 +24,14 @@ public class EnemyBulletScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(direction.x, direction.y).normalized * 250*Time.fixedDeltaTime;
+        rb.velocity = new Vector2(direction.x, direction.y).normalized * 375*Time.fixedDeltaTime;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(!collision.gameObject.CompareTag("Boss"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
