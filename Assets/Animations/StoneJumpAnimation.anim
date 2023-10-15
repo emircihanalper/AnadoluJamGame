@@ -21,6 +21,8 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300000, guid: dee9a269c9ab66a4282a714facc86c0f, type: 3}
+    - time: 0.5833333
+      value: {fileID: 21300000, guid: dee9a269c9ab66a4282a714facc86c0f, type: 3}
     attribute: m_Sprite
     path: Body
     classID: 212
@@ -68,6 +70,7 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
+    - {fileID: 21300000, guid: dee9a269c9ab66a4282a714facc86c0f, type: 3}
     - {fileID: 21300000, guid: dee9a269c9ab66a4282a714facc86c0f, type: 3}
     - {fileID: 21300000, guid: e30f91e76012ad245b5f2ef792099719, type: 3}
     - {fileID: 21300000, guid: 1ee51c068c7480f4e88c3b68931df87f, type: 3}

@@ -54,21 +54,21 @@ public class PlayerController : MonoBehaviour
         }
         
         yaka.SetActive(Mathf.Abs(input) > 0);
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && isAlive)
         {
             isJumped = true;
         }
-        if (Input.GetKeyDown("1"))
+        if (Input.GetKeyDown("1") &&isAlive)
         {
             animator.SetTrigger("ChangeFire");
             element = 1;
         }
-        if (Input.GetKeyDown("2"))
+        if (Input.GetKeyDown("2")&&isAlive)
         {
             animator.SetTrigger("ChangeWater");
             element = 2;
         }
-        if (Input.GetKeyDown("3"))
+        if (Input.GetKeyDown("3")&&isAlive)
         {
             animator.SetTrigger("ChangeStone");
             element = 3;
@@ -112,7 +112,7 @@ public class PlayerController : MonoBehaviour
                 jumpCount++;
                 isJumped = false;
 
-                if (element == 1)
+                if (element == 1 )
                 {
                     animator.SetBool("isFireJumping", true);
                 }
