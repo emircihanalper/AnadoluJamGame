@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     AudioManager audioManager;
     string[] sfxNames= {"Fire" ,"Water","Stone"};
     [SerializeField] GameObject face;
-
+    bool isAlive;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         lastTimeShoot = Time.time;
         audioManager = FindObjectOfType<AudioManager>();
-        
+        isAlive = true;
     }
 
     
@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
             element = 3;
         }
 
-        if (Input.GetMouseButtonDown(0) && Time.time-lastTimeShoot>coolDown)
+        if (Input.GetMouseButtonDown(0) && Time.time-lastTimeShoot>coolDown && isAlive)
         {
             ObjectShoot();
         }
@@ -98,26 +98,29 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        targetVelocity = new Vector2(input * speed, rb.velocity.y);
-        
-        rb.velocity = Vector2.Lerp(rb.velocity, targetVelocity, Time.fixedDeltaTime*10f);
-        if (isGrounded && isJumped && jumpCount<2)
+        if(isAlive)
         {
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            jumpCount++;
-            isJumped = false;
+            targetVelocity = new Vector2(input * speed, rb.velocity.y);
 
-            if(element==1)
+            rb.velocity = Vector2.Lerp(rb.velocity, targetVelocity, Time.fixedDeltaTime * 10f);
+            if (isGrounded && isJumped && jumpCount < 2)
             {
-                animator.SetBool("isFireJumping", true);
-            } 
-            else if (element == 2)
-            {
-                animator.SetBool("isWaterJumping", true);
-            }
-            else if (element == 3)
-            {
-                animator.SetBool("isStoneJumping", true);
+                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                jumpCount++;
+                isJumped = false;
+
+                if (element == 1)
+                {
+                    animator.SetBool("isFireJumping", true);
+                }
+                else if (element == 2)
+                {
+                    animator.SetBool("isWaterJumping", true);
+                }
+                else if (element == 3)
+                {
+                    animator.SetBool("isStoneJumping", true);
+                }
             }
         }
 
@@ -138,6 +141,7 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetTrigger("Die");
             face.SetActive(false);
+            isAlive = false;
             StartCoroutine(LoadSameScene());
         }
         else if(collision.gameObject.CompareTag("Level"))
@@ -148,6 +152,7 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetTrigger("Die");
             face.SetActive(false);
+            isAlive = false;
             StartCoroutine(LoadSameScene());
         }
         
