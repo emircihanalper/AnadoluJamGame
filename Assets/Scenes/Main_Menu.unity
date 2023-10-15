@@ -735,7 +735,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1292691759237546731, guid: 569af36605b119f4ca1a51d00d6f56e4, type: 3}
       propertyPath: sounds.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1292691759237546731, guid: 569af36605b119f4ca1a51d00d6f56e4, type: 3}
       propertyPath: sounds.Array.data[0].clip
@@ -786,6 +786,18 @@ PrefabInstance:
       value: Water
       objectReference: {fileID: 0}
     - target: {fileID: 1292691759237546731, guid: 569af36605b119f4ca1a51d00d6f56e4, type: 3}
+      propertyPath: sounds.Array.data[5].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0b557a84dd9cd304d9120c06cf8861ec, type: 3}
+    - target: {fileID: 1292691759237546731, guid: 569af36605b119f4ca1a51d00d6f56e4, type: 3}
+      propertyPath: sounds.Array.data[5].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1292691759237546731, guid: 569af36605b119f4ca1a51d00d6f56e4, type: 3}
+      propertyPath: sounds.Array.data[5].name
+      value: BossTheme
+      objectReference: {fileID: 0}
+    - target: {fileID: 1292691759237546731, guid: 569af36605b119f4ca1a51d00d6f56e4, type: 3}
       propertyPath: sounds.Array.data[0].volume
       value: 0.5
       objectReference: {fileID: 0}
@@ -803,6 +815,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1292691759237546731, guid: 569af36605b119f4ca1a51d00d6f56e4, type: 3}
       propertyPath: sounds.Array.data[4].volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1292691759237546731, guid: 569af36605b119f4ca1a51d00d6f56e4, type: 3}
+      propertyPath: sounds.Array.data[5].volume
       value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
