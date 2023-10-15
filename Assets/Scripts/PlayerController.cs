@@ -111,7 +111,6 @@ public class PlayerController : MonoBehaviour
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 jumpCount++;
                 isJumped = false;
-
                 if (element == 1 )
                 {
                     animator.SetBool("isFireJumping", true);
@@ -124,6 +123,7 @@ public class PlayerController : MonoBehaviour
                 {
                     animator.SetBool("isStoneJumping", true);
                 }
+                audioManager.Play("Jump");
             }
         }
 

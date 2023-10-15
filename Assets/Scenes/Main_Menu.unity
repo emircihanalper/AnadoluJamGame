@@ -735,7 +735,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1292691759237546731, guid: 569af36605b119f4ca1a51d00d6f56e4, type: 3}
       propertyPath: sounds.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1292691759237546731, guid: 569af36605b119f4ca1a51d00d6f56e4, type: 3}
       propertyPath: sounds.Array.data[0].clip
@@ -798,6 +798,18 @@ PrefabInstance:
       value: BossTheme
       objectReference: {fileID: 0}
     - target: {fileID: 1292691759237546731, guid: 569af36605b119f4ca1a51d00d6f56e4, type: 3}
+      propertyPath: sounds.Array.data[6].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8225f0b0e6626cb4e8f1fae646c67308, type: 3}
+    - target: {fileID: 1292691759237546731, guid: 569af36605b119f4ca1a51d00d6f56e4, type: 3}
+      propertyPath: sounds.Array.data[6].loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1292691759237546731, guid: 569af36605b119f4ca1a51d00d6f56e4, type: 3}
+      propertyPath: sounds.Array.data[6].name
+      value: Jump
+      objectReference: {fileID: 0}
+    - target: {fileID: 1292691759237546731, guid: 569af36605b119f4ca1a51d00d6f56e4, type: 3}
       propertyPath: sounds.Array.data[0].volume
       value: 0.5
       objectReference: {fileID: 0}
@@ -819,6 +831,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1292691759237546731, guid: 569af36605b119f4ca1a51d00d6f56e4, type: 3}
       propertyPath: sounds.Array.data[5].volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1292691759237546731, guid: 569af36605b119f4ca1a51d00d6f56e4, type: 3}
+      propertyPath: sounds.Array.data[6].volume
       value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
