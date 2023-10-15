@@ -13,7 +13,7 @@ public class EnemyShoot : MonoBehaviour
     int count = 3;
     AudioManager audioManager;
     bool isStarted;
-    
+    public bool isAlive;
     private void Start()
     {
         audioManager = FindObjectOfType<AudioManager>();
@@ -27,7 +27,7 @@ public class EnemyShoot : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer > 4 && isStarted)
+        if (timer > 4 && isStarted && isAlive)
         {
             timer = 0;
             audioManager.Play("Boss");
@@ -48,13 +48,15 @@ public class EnemyShoot : MonoBehaviour
     public void Shoot()
     {
         //rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        Instantiate(Bullet, Pivotpoint.position, Quaternion.identity);
+        GameObject mermi=Instantiate(Bullet, Pivotpoint.position, Quaternion.identity);
+        //mermi.GetComponent<Rigidbody2D>().AddForce(new Vector2(-200f, 400f));
     }
 
     IEnumerator bosswait()
     {
         yield return new WaitForSeconds(5f);
         isStarted = true;
+        isAlive = true;
     }    
 
 }

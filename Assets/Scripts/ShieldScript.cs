@@ -15,6 +15,7 @@ public class ShieldScript : MonoBehaviour
     [SerializeField] GameObject finish;
     bool canDamage;
     [SerializeField] GameObject[] shields;
+    [SerializeField] EnemyShoot enemyShoot;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +29,7 @@ public class ShieldScript : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
-        if (collision.gameObject.CompareTag("Stone") && element==1)
+        if (collision.gameObject.CompareTag("Stone") && element==1 && enemyShoot.isAlive)
         {
             hit--;
             bar.value = (float)hit / 3f;
@@ -45,7 +46,7 @@ public class ShieldScript : MonoBehaviour
             }
         }
 
-        if (collision.gameObject.CompareTag("Fire") && element==2)
+        if (collision.gameObject.CompareTag("Fire") && element== 2 && enemyShoot.isAlive)
         {
             hit--;
             bar.value = (float)hit / 3f;
@@ -62,7 +63,7 @@ public class ShieldScript : MonoBehaviour
             }
         }
 
-        if (collision.gameObject.CompareTag("Water") && element==3)
+        if (collision.gameObject.CompareTag("Water") && element== 3 && enemyShoot.isAlive)
         {
             hit--;
             bar.value = (float)hit / 3f;
@@ -71,6 +72,7 @@ public class ShieldScript : MonoBehaviour
                 Destroy(collision.gameObject);
                 finish.SetActive(true);
                 shields[2].SetActive(false);
+                enemyShoot.isAlive = false;
                 StartCoroutine(goCredits());
                 //Destroy(gameObject);
             }

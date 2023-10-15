@@ -29,7 +29,7 @@ public class EnemyBulletScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(!collision.gameObject.CompareTag("Boss"))
+        if(!collision.gameObject.CompareTag("Boss") && !collision.gameObject.CompareTag("Die"))
         {
             Destroy(gameObject);
         }
