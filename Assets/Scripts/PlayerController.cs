@@ -48,8 +48,11 @@ public class PlayerController : MonoBehaviour
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
-
-        animator.SetBool("isRunning", Mathf.Abs(input) > 0);
+        if (isAlive)
+        {
+            animator.SetBool("isRunning", Mathf.Abs(input) > 0);
+        }
+        
         yaka.SetActive(Mathf.Abs(input) > 0);
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -128,7 +131,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Ground"))
+        if(collision.gameObject.CompareTag("Ground") && isAlive)
         {
             isGrounded = true;
             isJumped = false;
@@ -137,7 +140,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isWaterJumping", false);
             animator.SetBool("isStoneJumping", false);           
         }
-        else if(collision.gameObject.CompareTag("Onfire") && element!=1)
+        else if(collision.gameObject.CompareTag("Onfire") && element!=1 &&isAlive)
         {
             animator.SetTrigger("Die");
             face.SetActive(false);
@@ -148,7 +151,7 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-        else if (collision.gameObject.CompareTag("Die") || collision.gameObject.CompareTag("Empty"))
+        else if ((collision.gameObject.CompareTag("Die") || collision.gameObject.CompareTag("Empty")) && isAlive)
         {
             animator.SetTrigger("Die");
             face.SetActive(false);

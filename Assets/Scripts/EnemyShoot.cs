@@ -6,7 +6,7 @@ public class EnemyShoot : MonoBehaviour
 {
 
     public GameObject Bullet;
-    public Transform Pivotpoint;
+    public Transform[] Pivotpoints;
     private float timer;
     [SerializeField] Rigidbody2D rb;
     float jumpForce = 8f;
@@ -27,7 +27,7 @@ public class EnemyShoot : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer > 4 && isStarted && isAlive)
+        if (timer > 2 && isStarted && isAlive)
         {
             timer = 0;
             audioManager.Play("Boss");
@@ -48,13 +48,13 @@ public class EnemyShoot : MonoBehaviour
     public void Shoot()
     {
         //rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        GameObject mermi=Instantiate(Bullet, Pivotpoint.position, Quaternion.identity);
+        GameObject mermi=Instantiate(Bullet, Pivotpoints[Random.Range(0,2)].position, Quaternion.identity);
         //mermi.GetComponent<Rigidbody2D>().AddForce(new Vector2(-200f, 400f));
     }
 
     IEnumerator bosswait()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3.25f);
         isStarted = true;
         isAlive = true;
     }    
